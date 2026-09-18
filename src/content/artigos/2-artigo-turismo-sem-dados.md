@@ -1,32 +1,32 @@
 ---
-title: "Por que o turismo municipal não mede o que promove"
+title: "Turismo sem dados não deixa rastro"
 description: "Faltam dados no turismo municipal por razões estruturais: equipe sem cargo técnico, descontinuidade entre mandatos e a falta do turismólogo concursado."
 slug: "turismo-municipal-sem-dados-descontinuidade"
 pubDate: 2026-09-18
 category: "observatorio-e-dados"
 tags: ["gestão municipal do turismo", "turismólogo", "descontinuidade administrativa", "dados turísticos"]
 image: "./imagens/2-capa-descontinuidade.png"
-imageAlt: "Arte em azul-marinho com séries de dados que se interrompem e recomeçam mais baixas a cada mandato"
+imageAlt: "Arte em azul-marinho com barras de dados por mandato que recomeçam mais baixas, título Turismo sem dados não deixa rastro"
 draft: false
 ---
 
-Pergunte a uma secretaria municipal de turismo quantos visitantes o município recebeu no último ano, qual a ocupação média da rede hoteleira ou quanto o principal evento da cidade retornou em atividade econômica. Na maioria dos municípios brasileiros, essas perguntas ficam sem resposta. O problema não é falta de ferramenta. É falta de estrutura, e ela tem duas causas que se repetem de norte a sul: equipes sem capacidade técnica e descontinuidade entre mandatos. As duas convergem para uma mesma ausência, a do turismólogo concursado.
+Pergunte a uma secretaria municipal de turismo quais são as dimensões e indicadores mensurados e quais estratégias foram praticadas com base em evidências. Na maioria dos municípios brasileiros, essas perguntas ficam sem resposta. O problema não é falta de ferramenta. É falta de estrutura, e ela tem duas causas que se repetem de norte a sul: equipes sem capacidade técnica e descontinuidade entre mandatos. As duas convergem para uma mesma ausência, a do turismólogo concursado.
 
-## O sintoma: promover muito, medir nada
+## Realidade: promover muito, medir nada
 
-O padrão é reconhecível. O município investe em evento, sinalização e divulgação, e justifica cada gasto com a frase que não prova nada: "movimentou a cidade". Sem linha de base, não há como saber se movimentou mais que no ano anterior nem se o mesmo recurso renderia mais em outra ação. As consequências são concretas: editais e convênios perdidos porque o diagnóstico pedido não existe, orçamento indefensável na hora do corte, e políticas que são sucesso no discurso e incógnita na prática.
+O padrão é reconhecível. O município investe em evento, sinalização e divulgação, e justifica cada gasto com a frase que não prova nada: "movimentou a cidade". Sem linha de base, não há como saber se movimentou mais que no ano anterior nem se o mesmo recurso renderia mais em outra ação. As consequências são concretas: o diagnóstico pedido não existe, o orçamento é indefensável na hora do corte, e as políticas são sucesso no discurso e incógnita na prática.
 
-É tentador ler esse quadro como desinteresse do gestor. A leitura honesta é pior: do jeito que está montado, o sistema municipal de turismo não premia quem mede.
+Nem sempre é desinteresse do gestor. Muitas vezes é pior: do jeito que está montado, o sistema municipal de turismo não premia quem mede.
 
 <!-- IMAGEM opcional: foto sua em reunião de COMTUR ou visita técnica a uma secretaria. Alt: "Reunião de trabalho com gestores municipais de turismo" -->
 
-## Primeira causa: a equipe que não tem como fazer
+## A equipe que não tem como fazer
 
 Boa parte das secretarias e diretorias de turismo opera com dois ou três servidores acumulando evento, atendimento, articulação com o trade e prestação de contas. Não há estatístico, não há analista e, com frequência, não há um único cargo técnico de turismo no organograma.
 
 Nessa configuração, mensuração vira tarefa de quem sobrar tempo. E nunca sobra, porque coleta de dados é trabalho contínuo e invisível, o oposto do evento que rende foto.
 
-## Segunda causa: o mandato que apaga a memória
+## O mandato que apaga a memória
 
 Secretário de turismo é, via de regra, cargo de livre nomeação. Troca a gestão, troca o secretário, e com ele saem o diretor, o assessor e qualquer projeto que carregue a marca do antecessor. A pesquisa iniciada não se repete, a série histórica se interrompe e a planilha com três anos de dados fica no computador de alguém que não trabalha mais lá.
 
@@ -34,7 +34,7 @@ Dados turísticos só valem em série. Uma medição isolada é fotografia; plan
 
 ## A raiz comum: o turismólogo que não existe no quadro
 
-A profissão de turismólogo é reconhecida em lei desde 2012 (Lei nº 12.591/2012). Ainda assim, concurso público municipal para o cargo é raridade, e o turismo acaba sendo, em muitos municípios, a única área finalística sem servidor de carreira da própria área. Saúde tem médico concursado, educação tem professor, obras tem engenheiro. Turismo tem quem a gestão do momento indicar.
+A profissão de turismólogo é reconhecida em lei desde 2012 (Lei nº 12.591/2012). Ainda assim, concurso público municipal para o cargo é raridade, e o turismo acaba sendo, em muitos municípios, a única pasta sem servidor de carreira da própria área. Saúde tem médico concursado, educação tem professor, obras tem engenheiro. Turismo tem quem a gestão do momento indicar.
 
 Essa é exatamente a figura que falta nas duas causas anteriores. O turismólogo de carreira é a capacidade técnica permanente que a equipe não tem e a ponte entre mandatos que a descontinuidade destrói: permanece quando o secretário muda, carrega a série histórica e faz a transição de governo ser passagem de bastão em vez de demolição.
 
