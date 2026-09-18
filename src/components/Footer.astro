@@ -1,0 +1,54 @@
+---
+import { SITE } from '../lib/site';
+import { CATEGORIAS } from '../lib/categorias';
+import { getArtigos } from '../lib/artigos';
+
+const artigos = await getArtigos();
+const comArtigos = new Set(artigos.map((a) => a.data.category));
+const categorias = Object.entries(CATEGORIAS).filter(([slug]) => comArtigos.has(slug as keyof typeof CATEGORIAS));
+const ano = new Date().getFullYear();
+---
+
+<footer class="mt-20 bg-marinho-900 text-marinho-100">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-3">
+    <div>
+      <p class="text-lg font-bold text-white">DataTurismo Brasil</p>
+      <p class="mt-2 text-sm leading-relaxed text-marinho-100/85">
+        Inteligência de dados para a gestão pública do turismo nos municípios brasileiros.
+      </p>
+    </div>
+    {
+      categorias.length > 0 && (
+        <nav aria-label="Categorias">
+          <p class="text-sm font-semibold tracking-[0.15em] text-verde-500 uppercase">Categorias</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            {categorias.map(([slug, c]) => (
+              <li>
+                <a href={`/categorias/${slug}/`} class="hover:text-white hover:underline">
+                  {c.nome}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+    <div>
+      <p class="text-sm font-semibold tracking-[0.15em] text-verde-500 uppercase">Contato</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href={SITE.siteInstitucional} class="hover:text-white hover:underline">dataturismobrasil.com.br</a></li>
+        <li>
+          <a href={SITE.instagram} rel="me noopener" class="hover:text-white hover:underline">
+            Instagram {SITE.instagramHandle}
+          </a>
+        </li>
+        <li><a href="/rss.xml" class="hover:text-white hover:underline">Feed RSS</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <p class="mx-auto max-w-6xl px-5 py-5 text-xs text-marinho-100/80">
+      © {ano} DataTurismo Brasil. Conteúdo por {SITE.autora.nome}.
+    </p>
+  </div>
+</footer>

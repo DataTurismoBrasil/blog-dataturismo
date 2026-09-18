@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CardArtigo from '../components/CardArtigo.astro';
+import { getArtigos } from '../lib/artigos';
+import { CATEGORIAS } from '../lib/categorias';
+import { SITE } from '../lib/site';
+
+const artigos = await getArtigos();
+const [maisRecente, ...demais] = artigos;
+const categoriasUsadas = Object.entries(CATEGORIAS).filter(([slug]) => artigos.some((a) => a.data.category === slug));
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: SITE.nome,
+    description: SITE.descricao,
+    url: `${SITE.url}/`,
+    inLanguage: SITE.lang,
+    publisher: { '@type': 'Organization', name: SITE.organizacao.nome, url: SITE.organizacao.url, logo: SITE.organizacao.logo },
+  },
+];
+---
+
+<BaseLayout title={`${SITE.nome} | Gestão pública do turismo com dados`} description={SITE.descricao} jsonLd={jsonLd}>
+  <section class="bg-marinho-900 text-white">
+    <div class="mx-auto max-w-6xl px-5 py-14 md:py-16">
+      <p class="flex items-center gap-3 text-sm font-semibold tracking-[0.25em] text-verde-500 uppercase">
+        <span class="h-0.5 w-10 bg-verde-500" aria-hidden="true"></span>Blog DataTurismo Brasil
+      </p>
+      <h1 class="mt-4 max-w-3xl text-3xl leading-tight font-bold tracking-tight md:text-5xl">
+        Gestão pública do turismo com base em dados
+      </h1>
+      <p class="mt-5 max-w-2xl font-serif text-lg leading-relaxed text-marinho-100">
+        Plano diretor, observatórios, ICMS Turístico, legislação e Mapa do Turismo, explicados para quem decide nos
+        municípios.
+      </p>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-5 pt-12">
+    {
+      categoriasUsadas.length > 0 && (
+        <nav aria-label="Categorias" class="mb-10">
+          <ul class="flex flex-wrap gap-2 text-sm font-semibold">
+            {categoriasUsadas.map(([slug, c]) => (
+              <li>
+                <a
+                  href={`/categorias/${slug}/`}
+                  class="inline-block rounded-full border border-linha px-4 py-1.5 text-marinho-800 hover:border-verde-700 hover:text-verde-700"
+                >
+                  {c.nome}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    {
+      maisRecente ? (
+        <>
+          <section aria-labelledby="titulo-recente">
+            <h2 id="titulo-recente" class="sr-only">
+              Artigo mais recente
+            </h2>
+            <CardArtigo artigo={maisRecente} destaque nivel="h3" />
+          </section>
+          {demais.length > 0 && (
+            <section aria-labelledby="titulo-todos" class="mt-14">
+              <h2 id="titulo-todos" class="text-2xl font-bold tracking-tight text-marinho-900">
+                Mais artigos
+              </h2>
+              <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {demais.map((artigo) => (
+                  <CardArtigo artigo={artigo} nivel="h3" />
+                ))}
+              </div>
+            </section>
+          )}
+        </>
+      ) : (
+        <p class="rounded-lg border border-linha bg-marinho-50 p-8 text-center text-cinza">
+          Os primeiros artigos estão a caminho. Enquanto isso, conheça a{' '}
+          <a href={SITE.siteInstitucional} class="font-semibold text-verde-700 underline">
+            DataTurismo Brasil
+          </a>
+          .
+        </p>
+      )
+    }
+  </div>
+</BaseLayout>

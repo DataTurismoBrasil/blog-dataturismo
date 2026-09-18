@@ -1,0 +1,149 @@
+@import '@fontsource/work-sans/latin-400.css';
+@import '@fontsource/work-sans/latin-600.css';
+@import '@fontsource/work-sans/latin-700.css';
+@import '@fontsource/source-serif-4/latin-400.css';
+@import '@fontsource/source-serif-4/latin-400-italic.css';
+@import '@fontsource/source-serif-4/latin-600.css';
+@import 'tailwindcss';
+
+@theme {
+  /* Identidade DataTurismo: azul-marinho + verde (sem azuis claros/vibrantes) */
+  --color-marinho-950: #0a1b2e;
+  --color-marinho-900: #0f263f;
+  --color-marinho-800: #163352;
+  --color-marinho-700: #234668;
+  --color-marinho-100: #e6ebf1;
+  --color-marinho-50: #f3f5f8;
+  --color-verde-500: #3fb279; /* verde da marca — usar sobre fundo escuro */
+  --color-verde-700: #1d7349; /* verde acessível sobre branco (contraste AA) */
+  --color-verde-50: #ecf7f1;
+  --color-tinta: #1c2733;
+  --color-cinza: #4d5a68;
+  --color-linha: #dde3ea;
+
+  --font-sans: 'Work Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+
+@layer base {
+  html {
+    @apply bg-white text-tinta antialiased;
+    font-family: var(--font-sans);
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-verde-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Corpo dos artigos — foco em leitura longa (~68 caracteres por linha) */
+.artigo-corpo {
+  font-family: var(--font-serif);
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  color: var(--color-tinta);
+  max-width: 68ch;
+}
+.artigo-corpo > * + * {
+  margin-top: 1.25em;
+}
+.artigo-corpo h2,
+.artigo-corpo h3 {
+  font-family: var(--font-sans);
+  color: var(--color-marinho-900);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.artigo-corpo h2 {
+  font-size: 1.625rem;
+  margin-top: 2.2em;
+  padding-top: 0.2em;
+}
+.artigo-corpo h3 {
+  font-size: 1.3rem;
+  margin-top: 1.8em;
+}
+.artigo-corpo h2 + *,
+.artigo-corpo h3 + * {
+  margin-top: 0.75em;
+}
+.artigo-corpo a {
+  color: var(--color-verde-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.artigo-corpo a:hover {
+  color: var(--color-marinho-900);
+}
+.artigo-corpo strong {
+  font-weight: 600;
+  color: var(--color-marinho-950);
+}
+.artigo-corpo ol,
+.artigo-corpo ul {
+  padding-left: 1.4em;
+}
+.artigo-corpo ol {
+  list-style: decimal;
+}
+.artigo-corpo ul {
+  list-style: disc;
+}
+.artigo-corpo li + li {
+  margin-top: 0.6em;
+}
+.artigo-corpo li::marker {
+  color: var(--color-verde-700);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+.artigo-corpo blockquote {
+  border-left: 3px solid var(--color-verde-500);
+  padding-left: 1.2em;
+  font-style: italic;
+  color: var(--color-cinza);
+}
+.artigo-corpo img {
+  border-radius: 6px;
+  margin-inline: auto;
+}
+.artigo-corpo figure figcaption,
+.artigo-corpo img + em {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-cinza);
+  text-align: center;
+  font-style: normal;
+  margin-top: 0.5em;
+}
+.artigo-corpo hr {
+  border-color: var(--color-linha);
+  margin-block: 2.5em;
+}
+.artigo-corpo code {
+  font-size: 0.9em;
+  background: var(--color-marinho-50);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+.artigo-corpo table {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  border-collapse: collapse;
+}
+.artigo-corpo th,
+.artigo-corpo td {
+  border-bottom: 1px solid var(--color-linha);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+/* Referências (última seção dos artigos): texto menor e quebra de URLs longas */
+.artigo-corpo.com-referencias h2:last-of-type ~ p {
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}

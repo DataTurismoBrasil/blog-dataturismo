@@ -1,0 +1,53 @@
+---
+import { SITE } from '../lib/site';
+
+const atual = Astro.url.pathname;
+const links = [
+  { href: '/', texto: 'Artigos' },
+  { href: '/sobre/', texto: 'Sobre' },
+];
+---
+
+<header class="border-b border-linha bg-white">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-5 py-4">
+    <a href="/" class="flex items-center gap-3 text-marinho-900">
+      <span class="flex h-12 w-12 items-center justify-center rounded-lg bg-marinho-900 p-1" aria-hidden="true">
+        <img src="/logo.svg" alt="" width="40" height="40" class="h-10 w-10" />
+      </span>
+      <span class="leading-tight">
+        <span class="block text-lg font-bold tracking-tight">DataTurismo Brasil</span>
+        <span class="block text-xs font-semibold tracking-[0.2em] text-verde-700 uppercase">Blog</span>
+      </span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.95rem] font-semibold">
+        {
+          links.map(({ href, texto }) => (
+            <li>
+              <a
+                href={href}
+                aria-current={atual === href ? 'page' : undefined}
+                class="text-marinho-800 hover:text-verde-700 aria-[current=page]:text-verde-700"
+              >
+                {texto}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href={SITE.instagram} rel="me noopener" target="_blank" class="text-marinho-800 hover:text-verde-700">
+            Instagram <span class="sr-only">{SITE.instagramHandle} (abre em nova aba)</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href={SITE.siteInstitucional}
+            class="rounded-md bg-marinho-900 px-3.5 py-2 text-white transition-colors hover:bg-marinho-700"
+          >
+            Site institucional
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../lib/site';
+import { ATUACAO, BIO, FORMACAO, pessoaJsonLd } from '../lib/autora';
+
+const titulo = `${SITE.autora.nome} | Sobre a autora`;
+const descricao =
+  'Ana Raquel de Almeida Dias: bacharel em Turismo, MBA em Marketing pela USP, mestranda na Unifesp, fundadora da DataTurismo Brasil e consultora Sebrae-SP.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    url: SITE.autora.url,
+    inLanguage: SITE.lang,
+    mainEntity: pessoaJsonLd(),
+  },
+];
+---
+
+<BaseLayout title={titulo} description={descricao} jsonLd={jsonLd}>
+  <div class="mx-auto max-w-3xl px-5 pt-12">
+    <p class="text-sm font-semibold tracking-[0.2em] text-verde-700 uppercase">Sobre a autora</p>
+    <h1 class="mt-2 text-3xl font-bold tracking-tight text-marinho-900 md:text-4xl">{SITE.autora.nome}</h1>
+
+    <div class="artigo-corpo mt-8">
+      {BIO.map((paragrafo) => <p>{paragrafo}</p>)}
+      <h2>Formação</h2>
+      <ul>
+        {FORMACAO.map((item) => <li>{item}</li>)}
+      </ul>
+      <h2>Atuação</h2>
+      <ul>
+        {ATUACAO.map((item) => <li>{item}</li>)}
+      </ul>
+      <p>
+        Conheça a DataTurismo Brasil em <a href={SITE.siteInstitucional}>dataturismobrasil.com.br</a> ou acompanhe no
+        Instagram <a href={SITE.instagram} rel="me">{SITE.instagramHandle}</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import type { Artigo } from '../lib/artigos';
+import { formatarData } from '../lib/artigos';
+import { nomeCategoria } from '../lib/categorias';
+
+interface Props {
+  artigo: Artigo;
+  destaque?: boolean;
+  /** Nível do título do card, para manter a hierarquia correta na página. */
+  nivel?: 'h2' | 'h3';
+}
+
+const { artigo, destaque = false, nivel = 'h2' } = Astro.props;
+const { title, description, pubDate, category, image, imageAlt, draft } = artigo.data;
+const href = `/artigos/${artigo.id}/`;
+const Titulo = nivel;
+---
+
+<article
+  class:list={[
+    'group relative flex flex-col overflow-hidden rounded-lg border border-linha bg-white transition-shadow hover:shadow-md',
+    destaque && 'md:grid md:grid-cols-[1.15fr_1fr]',
+  ]}
+>
+  {
+    image ? (
+      <Image
+        src={image}
+        alt={imageAlt ?? ''}
+        widths={destaque ? [600, 900, 1200] : [400, 600, 800]}
+        sizes={destaque ? '(min-width: 768px) 620px, 100vw' : '(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw'}
+        class="aspect-[1200/630] w-full object-cover"
+        loading={destaque ? 'eager' : 'lazy'}
+        fetchpriority={destaque ? 'high' : undefined}
+      />
+    ) : (
+      <div class="flex aspect-[1200/630] items-end bg-marinho-900 p-6" aria-hidden="true">
+        <span class="h-1 w-12 bg-verde-500" />
+      </div>
+    )
+  }
+  <div class:list={['flex flex-1 flex-col p-6', destaque && 'md:justify-center md:p-10']}>
+    <p class="text-xs font-semibold tracking-[0.15em] text-verde-700 uppercase">
+      {nomeCategoria(category)}
+      {draft && <span class="ml-2 rounded bg-amber-100 px-1.5 py-0.5 tracking-normal text-amber-950">Rascunho</span>}
+    </p>
+    <Titulo
+      class:list={[
+        'mt-2 font-bold tracking-tight text-marinho-900 group-hover:text-verde-700',
+        destaque ? 'text-2xl leading-tight md:text-3xl' : 'text-xl leading-snug',
+      ]}
+    >
+      <a href={href} class="after:absolute after:inset-0">{title}</a>
+    </Titulo>
+    <p class:list={['mt-3 font-serif leading-relaxed text-cinza', destaque ? 'text-lg' : 'text-base']}>{description}</p>
+    <p class="mt-auto pt-4 text-sm text-cinza"><time datetime={pubDate.toISOString()}>{formatarData(pubDate)}</time></p>
+  </div>
+</article>
