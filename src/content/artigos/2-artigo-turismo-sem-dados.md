@@ -7,7 +7,7 @@ category: "observatorio-e-dados"
 tags: ["gestão municipal do turismo", "turismólogo", "descontinuidade administrativa", "dados turísticos"]
 image: "./imagens/2-capa-descontinuidade.png"
 imageAlt: "Arte em azul-marinho com séries de dados que se interrompem e recomeçam mais baixas a cada mandato"
-draft: true
+draft: false
 ---
 
 Pergunte a uma secretaria municipal de turismo quantos visitantes o município recebeu no último ano, qual a ocupação média da rede hoteleira ou quanto o principal evento da cidade retornou em atividade econômica. Na maioria dos municípios brasileiros, essas perguntas ficam sem resposta. O problema não é falta de ferramenta. É falta de estrutura, e ela tem duas causas que se repetem de norte a sul: equipes sem capacidade técnica e descontinuidade entre mandatos. As duas convergem para uma mesma ausência, a do turismólogo concursado.

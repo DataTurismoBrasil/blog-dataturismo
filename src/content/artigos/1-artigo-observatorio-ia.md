@@ -7,7 +7,7 @@ category: "observatorio-e-dados"
 tags: ["observatório de turismo", "inteligência artificial", "gestão pública do turismo", "dados turísticos"]
 image: "./imagens/1-capa-observatorio.png"
 imageAlt: "Arte em azul-marinho com anéis de radar e rede de dados, título Observatório de Turismo e Inteligência Artificial"
-draft: true
+draft: false
 ---
 
 Um observatório de turismo municipal é a estrutura que coleta, organiza e analisa continuamente os dados da atividade turística de um município: fluxo de visitantes, ocupação, perfil de demanda, oferta cadastrada, impacto econômico. Durante décadas, manter um foi privilégio de capitais e destinos consolidados, porque exigia equipe técnica dedicada e orçamento contínuo. A inteligência artificial mudou essa conta.
