@@ -5,6 +5,8 @@ slug: "novas-tecnologias-metodos-antigos"
 pubDate: 2026-11-27
 category: "observatorio-e-dados"
 tags: ["inteligência artificial", "gestão pública do turismo", "dados turísticos", "observatório de turismo"]
+image: "./imagens/5-capa-ia.png"
+imageAlt: "Arte em azul-marinho com um bloco verde escrito conteúdo apoiado sobre dois blocos vazios e a legenda base de dados, título Novas tecnologias a serviço de métodos antigos"
 draft: false
 ---
 
